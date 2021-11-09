@@ -10,7 +10,7 @@ def new_rand():
     psw_output.delete(0, END)
     psw_len = int(input_characters.get())
     password = ''
-    for i in range(psw_len):
+    for _ in range(psw_len):
         password += chr(randint(33, 126))
     psw_output.insert(0, password)
 
@@ -20,8 +20,7 @@ def copy_password():
     root_window.clipboard_append(psw_output.get())
 
 
-number_of_characters = LabelFrame(root_window, text="Сколько символов?",
-                                  font=("arial"))
+number_of_characters = LabelFrame(root_window, text="Сколько символов?", font="arial")
 number_of_characters.pack(pady=20)
 
 input_characters = Entry(number_of_characters, font=("arial", 14))
@@ -41,5 +40,3 @@ copy_button = Button(frame_for_buttons, text="Скопировать парол�
 copy_button.grid(row=0, column=1, padx=10)
 
 root_window.mainloop()
-
-
